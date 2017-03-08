@@ -1,4 +1,4 @@
-import fredlib
+import txt2rdf
 import rdflib.extras.cmdlineutils as cmd
 import rdflib.tools.rdf2dot as rdf2dot
 import sys
@@ -13,7 +13,7 @@ from gi.repository import Gtk
 
 sentence = "The runtime of Pulp Fiction is 184 minutes." 
 filename = "myfile.rdf"
-g = fredlib.getFredGraph(fredlib.preprocessText(sentence),filename)
+g = txt2rdf.getFredGraph(txt2rdf.preprocessText(sentence),filename)
 
 g = rdflib.Graph()
 g.parse("myfile.rdf")
