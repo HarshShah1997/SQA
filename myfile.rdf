@@ -1,29 +1,31 @@
 <rdf:RDF
+    xmlns:j.0="http://www.ontologydesignpatterns.org/ont/vn/abox/role/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:j.0="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
     xmlns:j.1="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:j.2="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#"
+    xmlns:j.2="http://schema.org/"
+    xmlns:j.3="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pulp_fiction_1">
-    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Pulp_fiction"/>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#book_1">
+    <j.3:hasDeterminer rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#a"/>
+    <j.1:bookBy rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Charlie_mingus"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Book"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#runtime_1">
-    <j.2:hasDeterminer rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#the"/>
-    <j.0:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">184</j.0:hasDataValue>
-    <j.1:runtimeOf rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pulp_fiction_1"/>
-    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Runtime"/>
-    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Minute"/>
-    <j.2:hasQuantifier rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple"/>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Charlie_mingus">
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Charles_Mingus"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Pulp_fiction">
-    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Pulp_Fiction"/>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Give">
+    <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/ont/vn/data/Give_13010100"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/resource/Pulp_Fiction">
-    <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
-    <rdfs:subClassOf rdf:resource="http://schema.org/Movie"/>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Charles_Mingus">
+    <rdf:type rdf:resource="http://schema.org/MusicGroup"/>
+    <rdf:type rdf:resource="http://schema.org/Person"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataTypeProperty"/>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#give_1">
+    <j.0:Recipient rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Aldo"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Give"/>
+    <j.0:Agent rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Valentina"/>
+    <j.0:Theme rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/domain.owl#book_1"/>
   </rdf:Description>
 </rdf:RDF>

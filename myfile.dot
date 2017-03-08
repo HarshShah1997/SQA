@@ -1,37 +1,41 @@
 digraph { 
  node [ fontname="DejaVu Sans" ] ; 
 	node0 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>owl:equivalentClass</font> > ] ;
-	node1 -> node2 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node1 -> node3 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node4 -> node5 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node6 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node2 -> node3 [ color=BLACK, label=< <font point-size='10' color='#336633'>owl:sameAs</font> > ] ;
+	node4 -> node5 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.3:hasDeterminer</font> > ] ;
+	node3 -> node6 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node0 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
 	node8 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node6 -> node8 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.1:runtimeOf</font> > ] ;
-	node6 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.2:hasQuantifier</font> > ] ;
-	node6 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node6 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.2:hasDeterminer</font> > ] ;
-# http://dbpedia.org/resource/Pulp_Fiction node1
-node1 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Pulp_Fiction</B></td></tr><tr><td href='http://dbpedia.org/resource/Pulp_Fiction' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dbpedia.org/resource/Pulp_Fiction</font></td></tr></table> > ] 
-# http://www.w3.org/2002/07/owl#DataTypeProperty node5
-node5 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>DataTypeProperty</B></td></tr><tr><td href='http://www.w3.org/2002/07/owl#DataTypeProperty' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2002/07/owl#DataTypeProperty</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Pulp_fiction node0
-node0 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Pulp_fiction</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Pulp_fiction' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Pulp_fiction</font></td></tr></table> > ] 
-# http://schema.org/Movie node2
-node2 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Movie</B></td></tr><tr><td href='http://schema.org/Movie' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://schema.org/Movie</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pulp_fiction_1 node8
-node8 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>pulp_fiction_1</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pulp_fiction_1' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pulp_fiction_1</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Minute node10
-node10 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Minute</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Minute' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Minute</font></td></tr></table> > ] 
-# http://schema.org/CreativeWork node3
-node3 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>CreativeWork</B></td></tr><tr><td href='http://schema.org/CreativeWork' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://schema.org/CreativeWork</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Runtime node7
-node7 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Runtime</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Runtime' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Runtime</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple node9
-node9 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>multiple</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue node4
-node4 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>hasDataValue</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue</font></td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#runtime_1 node6
-node6 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>runtime_1</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#runtime_1' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#runtime_1</font></td></tr><tr><td align='left'>j.0:hasDataValue</td><td align='left'>&quot;184&quot;^^xsd:nonNegativeInteger</td></tr></table> > ] 
-# http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#the node11
-node11 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>the</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#the' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#the</font></td></tr></table> > ] 
+	node8 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.0:Agent</font> > ] ;
+	node8 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.0:Theme</font> > ] ;
+	node4 -> node2 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.1:bookBy</font> > ] ;
+	node4 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node8 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>j.0:Recipient</font> > ] ;
+	node3 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+# http://schema.org/MusicGroup node12
+node12 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>MusicGroup</B></td></tr><tr><td href='http://schema.org/MusicGroup' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://schema.org/MusicGroup</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Charlie_mingus node2
+node2 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Charlie_mingus</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Charlie_mingus' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Charlie_mingus</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Book node10
+node10 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Book</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Book' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Book</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Aldo node11
+node11 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Aldo</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Aldo' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Aldo</font></td></tr></table> > ] 
+# http://dbpedia.org/resource/Charles_Mingus node3
+node3 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Charles_Mingus</B></td></tr><tr><td href='http://dbpedia.org/resource/Charles_Mingus' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dbpedia.org/resource/Charles_Mingus</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#book_1 node4
+node4 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>book_1</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#book_1' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#book_1</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event node7
+node7 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Event</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/vn/data/Give_13010100 node1
+node1 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Give_13010100</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/vn/data/Give_13010100' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/vn/data/Give_13010100</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#a node5
+node5 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>a</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#a' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#a</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Valentina node9
+node9 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Valentina</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Valentina' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Valentina</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#give_1 node8
+node8 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>give_1</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#give_1' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#give_1</font></td></tr></table> > ] 
+# http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Give node0
+node0 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Give</B></td></tr><tr><td href='http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Give' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Give</font></td></tr></table> > ] 
+# http://schema.org/Person node6
+node6 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Person</B></td></tr><tr><td href='http://schema.org/Person' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://schema.org/Person</font></td></tr></table> > ] 
 }
