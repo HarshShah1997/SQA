@@ -114,7 +114,9 @@ $(document).ready(function() {
                 'question': $('#question').val()
             },
             success: function(result) {
-                $('#queryEdit').text(result);
+                $('#queryEdit').editable('setValue', result);
+                //$('#queryEdit').text(result);
+                //$('#queryEdit').val(result);
             }
         });
     });
