@@ -1,6 +1,9 @@
 .home {
 	padding: 40px 15px;
 	text-align: center;
+        width: auto;
+        margin-left: 300px;
+        margin-right: 300px;
 }
 
 body {
@@ -13,4 +16,14 @@ ul {
 
 ul li {
 	padding: 5px;
+}
+
+.editable-container.editable-inline,
+.editable-container.editable-inline .control-group.form-group,
+.editable-container.editable-inline .control-group.form-group .editable-input,
+.editable-container.editable-inline .control-group.form-group .editable-input textarea,
+.editable-container.editable-inline .control-group.form-group .editable-input select,
+.editable-container.editable-inline .control-group.form-group .editable-input input:not([type=radio]):not([type=checkbox]):not([type=submit])
+{
+    width: 100%;
 }

@@ -16,12 +16,14 @@ PREFIX dbr: <http://dbpedia.org/resource/>
 PREFIX yago: <http://dbpedia.org/class/yago/>
 PREFIX fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#>
 PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#>
 
-SELECT DISTINCT ?x3 WHERE {
-  ?x0 fred:runtimeOf ?x1.
-  ?x1 rdf:type ?x2.
-  ?x2 owl:equivalentClass dbr:Pulp_Fiction.
-  ?x0 dul:hasDataValue ?x3.
+SELECT DISTINCT ?x1 WHERE {
+  ?x0 rdf:type fred:BestPerformance.
+  ?x0 fred:winOf ?x1.
+  ?x0 fred:in ?x2.
+  ?x2 rdf:type fred:60mHurdle.
+  ?x2 quant:hasQuantifier quant:60m.
 }
 '''
 
