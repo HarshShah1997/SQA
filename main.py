@@ -5,20 +5,34 @@ import quepy
 app = Flask(__name__)
 dbpedia = quepy.install("dbpedia")
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def root():
+    return render_template("home.html")
+
+@app.route("/_generateQuery", methods=["POST"])
+def generateQuery():
     if request.method == "POST":
-        query = request.form['question']
-        result = get_query(query)
-    else:
-        result = []
-    return render_template("home.html", result=result)
+        question = request.form['question']
+        query = get_query(question)
+        return str(query)
+
+@app.route("/_executeQuery", methods=["POST"])
+def executeQuery():
+    if request.method == "POST":
+        query = request.form['query']
+        result = run_query(query)
+        processed = process(result)
+        return processed
+
+def process(result):
+    ans = ''
+    for col in result:
+        for key in col:
+            ans += col[key]['value'] + '\n'
+    return ans
 
 def get_query(question):
     target, query, metadata = dbpedia.get_query(question)
-    print(target)
-    print(query)
-    print(metadata)
     return query
 
 def run_query(query):
@@ -26,7 +40,6 @@ def run_query(query):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     results = sparql.query().convert()
-    print(results)
     return results['results']['bindings']
 
     #for result in results["results"]["bindings"]:

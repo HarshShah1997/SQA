@@ -54,16 +54,19 @@
 
       <div class="home">
         <p class="lead">SPARQL</p>
-	<form class="form" action="/" method="POST" role="form">
-		<div class="form-group">
-			<label for="question">Enter your question: </label>
-                        <input type="text" class="form-control mb-2" id="question" name="question" rows="3"></input>
-		</div>
-		<button type="submit" class="btn btn-primary">Go</button>
+	    <div class="form-group">
+		<label for="question">Enter your question: </label>
+                <input type="text" class="form-control mb-2" id="question" name="question" rows="3"></input>
+	    </div>
+	    <button id="generate" class="btn btn-primary">Go</button>
 
-	</form>
         <hr>
-        <a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">{{ result }}</a>
+        <a href="#" id="queryEdit" data-type="textarea" data-pk="1" data-placeholder="Enter query here..." data-title="Edit Query">{{ query }}</a>
+        <br>
+        <button class="btn btn-success" id="execute">Execute Query</button>
+        <hr>
+        <p id='result'></p>
+
 
       </div><!-- /.home -->
     </div><!-- /.container -->
@@ -81,9 +84,42 @@
 
     <script>
 $.fn.editable.defaults.mode = 'inline';
-$('#comments').editable({
-    showbuttons: 'bottom'
-}); 
+$('#queryEdit').editable({
+    showbuttons: 'bottom',
+});
+
+$(document).ready(function() {
+
+    $("#execute").click(function() {
+        console.log($('#queryEdit').text());
+
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('executeQuery') }}",
+            data: {
+                'query': $('#queryEdit').text()
+            },
+            success: function (result) {
+                console.log(result);
+                $('#result').text(result);
+            }
+        });
+    });
+
+    $('#generate').click(function() {
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('generateQuery') }}",
+            data: {
+                'question': $('#question').val()
+            },
+            success: function(result) {
+                $('#queryEdit').text(result);
+            }
+        });
+    });
+
+});
     </script>
 
  </body>
