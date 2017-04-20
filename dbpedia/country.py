@@ -28,10 +28,10 @@ class PresidentOfQuestion(QuestionTemplate):
 
     def interpret(self, match):
         president = PresidentOf(match.country)
-        incumbent = IncumbentOf(president)
-        label = LabelOf(incumbent)
+        #incumbent = IncumbentOf(president)
+        #label = LabelOf(incumbent)
 
-        return label, "enum"
+        return president, "enum"
 
 
 class CapitalOfQuestion(QuestionTemplate):
@@ -50,8 +50,6 @@ class CapitalOfQuestion(QuestionTemplate):
         return label, "enum"
 
 
-# FIXME: the generated query needs FILTER isLiteral() to the head
-# because dbpedia sometimes returns different things
 class LanguageOfQuestion(QuestionTemplate):
     """
     Regex for questions about the language spoken in a country.

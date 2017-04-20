@@ -82,12 +82,12 @@ class CapitalOf(FixedRelation):
 
 
 class LanguageOf(FixedRelation):
-    relation = "dbpprop:officialLanguages"
+    relation = "dbpedia-owl:language"
     reverse = True
 
 
 class PopulationOf(FixedRelation):
-    relation = "dbpprop:populationCensus"
+    relation = "dbpedia-owl:populationTotal"
     reverse = True
 
 
