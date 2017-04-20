@@ -22,6 +22,8 @@ def executeQuery():
         query = request.form['query']
         result = run_query(query)
         processed = process(result)
+        if processed == "":
+            processed = "Answer not found"
         return processed
 
 def process(result):
