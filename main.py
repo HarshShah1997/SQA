@@ -1,9 +1,9 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 from flask import Flask, render_template, request
-import quepy
+import parsy
 
 app = Flask(__name__)
-dbpedia = quepy.install("dbpedia")
+dbpedia = parsy.install("dbpedia")
 
 @app.route("/", methods=["GET"])
 def root():

@@ -25,7 +25,7 @@ class Thing(Particle):
 class WhatIs(QuestionTemplate):
     """
     Regex for questions like "What is a blowtorch
-    Ex: "What is a car"
+    Ex: "What is a Car"
         "What is Seinfield?"
     """
 

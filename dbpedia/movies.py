@@ -54,12 +54,15 @@ class MoviesByDirectorQuestion(QuestionTemplate):
     Ex: "List movies directed by Quentin Tarantino.
         "movies directed by Martin Scorsese"
         "which movies did Mel Gibson directed"
+        "Which movies are directed by Steven Speilberg"
     """
 
     regex = (Question(Lemma("list")) + (Lemma("movie") | Lemma("film")) +
              Question(Lemma("direct")) + Lemma("by") + Director()) | \
             (Lemma("which") + (Lemma("movie") | Lemma("film")) + Lemma("do") +
-             Director() + Lemma("direct") + Question(Pos(".")))
+             Director() + Lemma("direct") + Question(Pos("."))) | \
+            (Lemma("which") + (Lemma("movie") | Lemma("film")) + Pos("VBP") + \
+            Lemma("direct") + Pos("IN") + Director() + Question(Pos(".")))
 
     def interpret(self, match):
         movie = IsMovie() + DirectedBy(match.director)
