@@ -24,8 +24,8 @@ class CapitalOfQuestion(QuestionTemplate):
     Ex: "What is the capital of Massachussets?"
     """
 
-    opening = Lemma("what") + Token("is")
-    regex = opening + Pos("DT") + Lemma("capital") + Pos("IN") + \
+    opening = Lemma("what") + Lemma("be")
+    regex = Question(opening) + Question(Pos("DT")) + Lemma("capital") + Pos("IN") + \
         Question(Pos("DT")) + PopulatedPlace() + Question(Pos("."))
 
     def interpret(self, match):
@@ -41,7 +41,7 @@ class PopulationOfQuestion(QuestionTemplate):
         "How many people live in Cordoba?"
     """
 
-    openings = (Pos("WP") + Token("is") + Pos("DT") +
+    openings = (Question(Pos("WP") + Lemma("be") + Pos("DT")) +
                 Lemma("population") + Pos("IN")) | \
                (Pos("WRB") + Lemma("many") + Lemma("people") +
                 Token("live") + Pos("IN"))
