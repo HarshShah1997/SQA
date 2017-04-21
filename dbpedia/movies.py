@@ -75,12 +75,15 @@ class MovieDurationQuestion(QuestionTemplate):
     """
     Ex: "How long is Pulp Fiction"
         "What is the duration of The Thin Red Line?"
+        "What is the runtime of Fight Club?"
     """
 
     regex = ((Lemmas("how long be") + Movie()) |
-            (Lemmas("what be") + Pos("DT") + Lemma("duration") +
+            (Lemmas("what be") + Pos("DT") + (Lemma("runtime") | Lemma("duration")) +
              Pos("IN") + Movie())) + \
             Question(Pos("."))
+            #(Lemmas("what be") + Pos("DT") + Lemma("runtime") + 
+            #Pos("IN") + Movie())) + \
 
     def interpret(self, match):
         duration = DurationOf(match.movie)
