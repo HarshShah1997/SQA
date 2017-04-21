@@ -21,7 +21,7 @@ class WhoIs(QuestionTemplate):
     Ex: "Who is Tom Cruise?"
     """
 
-    regex = Lemma("who") + Lemma("be") + Person() + \
+    regex = Question(Lemma("who") + Lemma("be")) + Person() + \
         Question(Pos("."))
 
     def interpret(self, match):
@@ -34,7 +34,8 @@ class HowOldIsQuestion(QuestionTemplate):
     Ex: "How old is Bob Dylan".
     """
 
-    regex = Pos("WRB") + Lemma("old") + Lemma("be") + Person() + \
+    regex = ((Pos("WRB") + Lemma("old") + Lemma("be") + Person()) |
+            (Person() + Lemma("age"))) + \
         Question(Pos("."))
 
     def interpret(self, match):
@@ -47,7 +48,7 @@ class WhereIsFromQuestion(QuestionTemplate):
     Ex: "Where is Bill Gates from?"
     """
 
-    regex = Lemmas("where be") + Person() + Lemma("from") + \
+    regex = Question(Lemmas("where be")) + Person() + Lemma("from") + \
         Question(Pos("."))
 
     def interpret(self, match):
