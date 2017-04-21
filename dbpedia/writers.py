@@ -52,7 +52,9 @@ class BooksByAuthorQuestion(QuestionTemplate):
 
     regex = (Question(Lemma("list")) + Lemmas("book by") + Author()) | \
             ((Lemma("which") | Lemma("what")) + Lemmas("book do") +
-             Author() + Lemma("write") + Question(Pos(".")))
+             Author() + Lemma("write") + Question(Pos("."))) | \
+            (Question(Lemma("which")) + Lemma("book") + Question(Lemma("be")) + \
+            Lemma("write") + Pos("IN") + Author() + Question(Pos(".")))
 
     def interpret(self, match):
         book = IsBook() + HasAuthor(match.author)
