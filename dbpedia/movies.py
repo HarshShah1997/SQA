@@ -82,8 +82,6 @@ class MovieDurationQuestion(QuestionTemplate):
             (Lemmas("what be") + Pos("DT") + (Lemma("runtime") | Lemma("duration")) +
              Pos("IN") + Movie())) + \
             Question(Pos("."))
-            #(Lemmas("what be") + Pos("DT") + Lemma("runtime") + 
-            #Pos("IN") + Movie())) + \
 
     def interpret(self, match):
         duration = DurationOf(match.movie)
