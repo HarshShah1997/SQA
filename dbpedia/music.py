@@ -45,7 +45,7 @@ class FoundationQuestion(QuestionTemplate):
         "When was Korn formed?"
     """
 
-    regex = Pos("WRB") + Lemma("be") + Band() + \
+    regex = Question(Pos("WRB") + Lemma("be")) + Band() + \
         (Lemma("form") | Lemma("found")) + Question(Pos("."))
 
     def interpret(self, match):
@@ -60,7 +60,7 @@ class GenreQuestion(QuestionTemplate):
         "Music genre of Radiohead"
     """
 
-    optional_opening = Question(Pos("WP") + Lemma("be") + Pos("DT"))
+    optional_opening = Question(Pos("WP") + Lemma("be") + Question(Pos("DT")))
     regex = optional_opening + Question(Lemma("music")) + Lemma("genre") + \
         Pos("IN") + Band() + Question(Pos("."))
 
