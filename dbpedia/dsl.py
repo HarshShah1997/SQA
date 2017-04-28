@@ -186,5 +186,5 @@ class IsBook(FixedType):
 
 
 class LocationOf(FixedRelation):
-    relation = "dbpedia-owl:city"
+    relation = "dbpedia-owl:location"
     reverse = True

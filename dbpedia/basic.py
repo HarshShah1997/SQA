@@ -8,6 +8,7 @@ from quepy.parsing import Lemma, Pos, QuestionTemplate, Token, Particle, \
 from quepy.dsl import HasKeyword, IsRelatedTo, HasType
 from .dsl import DefinitionOf, LabelOf, IsPlace, \
     UTCof, LocationOf
+import re
 
 
 # Openings
@@ -22,8 +23,10 @@ class Thing(Particle):
         #print(match.words.tokens)
         tokens = match.words.tokens
         #tokens = tokens.split(" ")[1]
-        if tokens == "IIIT Allahabad":
-            tokens = "Indian Institute of Information Technology, Allahabad"
+        iiit = re.compile("IIIT")
+        tokens = iiit.sub("Indian Institute of Information Technology,", tokens)
+        iit = re.compile("IIT")
+        tokens = iit.sub("Indian Institute of Technology", tokens)
         return HasKeyword(tokens)
 
 
