@@ -55,11 +55,12 @@ class LanguageOfQuestion(QuestionTemplate):
     Regex for questions about the language spoken in a country.
     Ex: "What is the language of Argentina?"
         "what language is spoken in Argentina?"
+        "which language is spoken in Argentina?"
     """
 
     openings = (Lemma("what") + Token("is") + Pos("DT") +
                 Question(Lemma("official")) + Lemma("language")) | \
-               (Lemma("what") + Lemma("language") + Token("is") +
+               ((Lemma("what") | Lemma("which")) + Lemma("language") + Token("is") +
                 Lemma("speak"))
 
     regex = openings + Pos("IN") + Question(Pos("DT")) + Country() + \
