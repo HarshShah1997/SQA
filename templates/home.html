@@ -58,8 +58,8 @@
 		<label for="question">Enter your question: </label>
                 <input type="text" class="form-control mb-2" id="question" name="question" rows="3"></input>
 	    </div>
-	    <button id="generate" class="btn btn-primary">Go</button>
-
+	    <button id="generate" class="btn btn-primary">Generate SPARQL</button>
+		<button id="viewbtn" class="btn btn-primary">View SPARQL</button>
         <hr>
         <a href="#" id="queryEdit" data-type="textarea" data-pk="1" data-placeholder="Enter query here..." data-title="Edit Query">{{ query }}</a>
         <br>
@@ -119,6 +119,11 @@ $(document).ready(function() {
                 //$('#queryEdit').val(result);
             }
         });
+		document.getElementById("queryEdit").style.display = "none";
+    });
+
+	 $('#viewbtn').click(function() {
+		document.getElementById("queryEdit").style.display = '';
     });
 
 });
