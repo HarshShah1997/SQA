@@ -15,15 +15,15 @@ LISTOPEN = Lemma("list") | Lemma("name")
 
 
 class Thing(Particle):
-    regex = Question(Pos("JJ")) + (Pos("NN") | Pos("NNP") | Pos("NNS")) |\
-            Pos("VBN")
+    regex = Question(Pos("JJ")) + ((Pos("NN") | Pos("NNP") | Pos("NNS")) |\
+            Pos("VBN")) + Question(Pos("NN") | Pos("NNP") | Pos("NNS")) 
 
     def interpret(self, match):
         #print(match.words.tokens)
         tokens = match.words.tokens
         #tokens = tokens.split(" ")[1]
-        if tokens == "IIIT_Allahabad":
-            tokens = "Indian_Institute_of_Information_Technology,_Allahabad"
+        if tokens == "IIIT Allahabad":
+            tokens = "Indian Institute of Information Technology, Allahabad"
         return HasKeyword(tokens)
 
 
