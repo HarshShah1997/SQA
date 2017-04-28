@@ -19,7 +19,12 @@ class Thing(Particle):
             Pos("VBN")
 
     def interpret(self, match):
-        return HasKeyword(match.words.tokens)
+        #print(match.words.tokens)
+        tokens = match.words.tokens
+        #tokens = tokens.split(" ")[1]
+        if tokens == "IIIT_Allahabad":
+            tokens = "Indian_Institute_of_Information_Technology,_Allahabad"
+        return HasKeyword(tokens)
 
 
 class WhatIs(QuestionTemplate):
