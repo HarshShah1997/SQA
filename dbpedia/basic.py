@@ -3,7 +3,7 @@ Basic questions for DBpedia.
 """
 
 from refo import Group, Plus, Question
-from quepy.parsing import Lemma, Pos, QuestionTemplate, Token, Particle, \
+from parsy.parsing import Lemma, Pos, QuestionTemplate, Token, Particle, \
                           Lemmas
 from parsy.dsl import HasKeyword, IsRelatedTo, HasType
 from .dsl import DefinitionOf, LabelOf, IsPlace, \
