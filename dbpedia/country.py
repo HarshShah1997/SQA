@@ -3,8 +3,8 @@ Country related regex
 """
 
 from refo import Plus, Question
-from quepy.dsl import HasKeyword
-from quepy.parsing import Lemma, Pos, QuestionTemplate, Token, Particle
+from parsy.dsl import HasKeyword
+from parsy.parsing import Lemma, Pos, QuestionTemplate, Token, Particle
 from .dsl import IsCountry, IncumbentOf, CapitalOf, \
     LabelOf, LanguageOf, PopulationOf, PresidentOf
 

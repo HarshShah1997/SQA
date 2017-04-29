@@ -2,7 +2,7 @@
 Domain specific language for DBpedia quepy.
 """
 
-from quepy.dsl import FixedType, HasKeyword, FixedRelation, FixedDataRelation
+from parsy.dsl import FixedType, HasKeyword, FixedRelation, FixedDataRelation
 
 # Setup the Keywords for this application
 HasKeyword.relation = "rdfs:label"
